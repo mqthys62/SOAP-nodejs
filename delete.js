@@ -1,7 +1,7 @@
 const soap = require("soap");
 
 soap.createClient(
-  "http://localhost:8000/products?wsdl",
+  "http://localhost:8001/products?wsdl",
   {},
   function (err, client) {
     if (err) {

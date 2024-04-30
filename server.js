@@ -3,7 +3,7 @@ const fs = require("fs");
 const http = require("http");
 const postgres = require("postgres");
 
-const sql = postgres({ db: "mydb" });
+const sql = postgres({ db: "mydb", user:"user", password: "password" });
 
 const service = {
   ProductsService: {
@@ -96,9 +96,9 @@ const server = http.createServer(function (request, response) {
   response.end("404: Not Found: " + request.url);
 });
 
-server.listen(8000);
+server.listen(8001);
 
 const xml = fs.readFileSync("productService.wsdl", "utf8");
 soap.listen(server, "/products", service, xml, function () {
-  console.log("SOAP server running at http://localhost:8000/products?wsdl");
+  console.log("SOAP server running at http://localhost:8001/products?wsdl");
 });
