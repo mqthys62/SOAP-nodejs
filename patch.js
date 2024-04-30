@@ -8,12 +8,12 @@ soap.createClient(
       console.error(err);
       return;
     }
-
-    client.CreateProduct(
+    client.PatchProduct(
       {
-        name: "Test",
-        about: "Pas mauvais",
-        price: "80",
+        id: 1,
+        name: "Changement",
+        about: "Pas mauvais 2 ",
+        price: "80000",
       },
       function (err, result) {
         if (err) {

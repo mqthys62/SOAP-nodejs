@@ -8,12 +8,9 @@ soap.createClient(
       console.error(err);
       return;
     }
-
-    client.CreateProduct(
+    client.GetProducts(
       {
-        name: "Test",
-        about: "Pas mauvais",
-        price: "80",
+        id: 1,
       },
       function (err, result) {
         if (err) {
